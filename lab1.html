@@ -1,0 +1,113 @@
+<html>
+<body>
+	<canvas id='lab01' height="550" width="1250" />
+		<script>
+		var canvas=document.getElementById('lab01');
+		var ctx = canvas.getContext('2d');
+		var offset = 0;
+		
+		setInterval(function() 
+		{
+		
+			//sky 
+			ctx.fillStyle = '#00BFFF'; 
+			ctx.fillRect(0, 0, 1250, 550);
+			ctx.fillStyle = '#228b22';
+			
+			//earth 
+			ctx.fillStyle = '#008000';
+			ctx.fillRect(0, 400, 1250, 400);
+			
+			//trees
+			for(let i = 150; i < 1110; )
+			{
+				ctx.fillStyle = '#7B4513';
+				ctx.fillRect(i, 290, 15, 150); 
+				ctx.fillStyle = '#005400';
+				//ctx.beginPath();
+				//ctx.moveTo(i+6, 285);
+				//ctx.lineTo(i-50, 425);
+				//ctx.lineTo(i+60, 425);
+				//ctx.fill();
+				ctx.beginPath();
+				ctx.arc(i+7, 310, 60, 0, Math.PI*2, true);
+				ctx.arc(i-23, 320, 45, 0, Math.PI*2, true);
+				ctx.arc(i+37, 320, 45, 0, Math.PI*2, true);
+				ctx.fill();
+				i = i + 150; 
+				
+			}
+			for(let i = 100; i < 1210; )
+			{
+				ctx.fillStyle = '#8B4513';
+				ctx.fillRect(i, 300, 15, 150); 
+				ctx.fillStyle = '#006400';
+				//ctx.beginPath();
+				//ctx.moveTo(i+6, 285);
+				//ctx.lineTo(i-50, 425);
+				//ctx.lineTo(i+60, 425);
+				//ctx.fill();
+				ctx.beginPath();
+				ctx.arc(i+7, 330, 60, 0, Math.PI*2, true);
+				ctx.arc(i-23, 340, 45, 0, Math.PI*2, true);
+				ctx.arc(i+37, 340, 45, 0, Math.PI*2, true);
+				ctx.fill();
+				i = i + 150; 
+				
+			}
+			
+			//sun 
+			ctx.fillStyle = '#FFD700';
+			ctx.beginPath();
+			ctx.arc(200, 100, 50, 0, Math.PI*2, false);
+			ctx.fill();
+			//clouds 
+			ctx.fillStyle = '#F0F8FF';
+			ctx.beginPath();
+			ctx.arc(500, 100, 60, 0, Math.PI*2, true);
+			ctx.arc(450, 100, 45, 0, Math.PI*2, true);
+			ctx.arc(550, 100, 45, 0, Math.PI*2, true);
+			ctx.arc(420, 100, 30, 0, Math.PI*2, true);
+			ctx.arc(580, 100, 30, 0, Math.PI*2, true);
+			ctx.fill();
+			ctx.fillStyle = '#F0F8FF';
+			ctx.beginPath();
+			ctx.arc(800, 150, 50, 0, Math.PI*2, true);
+			ctx.arc(760, 150, 35, 0, Math.PI*2, true);
+			ctx.arc(840, 150, 35, 0, Math.PI*2, true);
+			ctx.arc(730, 150, 20, 0, Math.PI*2, true);
+			ctx.arc(870, 150, 20, 0, Math.PI*2, true);
+			ctx.fill();
+			ctx.beginPath();
+			ctx.arc(1100, 100, 60, 0, Math.PI*2, true);
+			ctx.arc(1050, 100, 45, 0, Math.PI*2, true);
+			ctx.arc(1150, 100, 45, 0, Math.PI*2, true);
+			ctx.arc(1020, 100, 30, 0, Math.PI*2, true);
+			ctx.arc(1180, 100, 30, 0, Math.PI*2, true);
+			ctx.fill();
+	
+			
+			//train 
+			ctx.fillStyle = '#000080';
+			ctx.fillRect(100+offset, 430, 120, 60); 
+			ctx.fillStyle = '#000080';
+			ctx.fillRect(100+offset, 380, 60, 70); 
+			ctx.fillStyle = '#088080';
+			ctx.fillRect(115+offset, 400, 25, 30);
+			ctx.fillStyle = '#000080';
+			ctx.fillRect(200+offset, 410, 10, 20); 	
+			
+			ctx.fillStyle = '#708090';
+			ctx.beginPath();
+			ctx.arc(120+offset, 500, 30, 0, Math.PI*2, true);
+			ctx.arc(200+offset, 510, 20, 0, Math.PI*2, true);
+			ctx.fill();
+			
+			offset+= 5; 
+			
+		}, 100);
+		
+	</script>
+
+</body>
+</html>
